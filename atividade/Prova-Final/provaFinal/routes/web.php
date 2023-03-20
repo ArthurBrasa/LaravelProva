@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NavigationSystem;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [NavigationSystem::class, 'index'])->name('home');
+Route::get('/contatos', [NavigationSystem::class, 'contatos'])->name('contatos');
+Route::get('/sobre', [NavigationSystem::class, 'sobre'])->name('sobre');
+
+
